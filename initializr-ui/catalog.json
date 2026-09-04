@@ -1,0 +1,148 @@
+{
+  "name": "Dropwizard Initializr",
+  "version": "1.2.0",
+  "defaults": {
+    "build": "maven",
+    "javaVersion": "17",
+    "dwVersion": "5.0.2",
+    "group": "com.example",
+    "artifact": "demo",
+    "name": "Demo",
+    "description": "A Dropwizard service",
+    "packageName": "com.example.demo",
+    "dependencies": ["testing"],
+    "docker": false,
+    "git": false
+  },
+  "builds": [
+    { "id": "maven", "name": "Maven" },
+    { "id": "gradle", "name": "Gradle" }
+  ],
+  "dropwizardVersions": [
+    { "id": "5.0.2", "name": "5.0.2", "minJava": 17, "recommended": true },
+    { "id": "4.0.17", "name": "4.0.17", "minJava": 11 },
+    { "id": "3.0.17", "name": "3.0.17", "minJava": 11 }
+  ],
+  "javaVersions": ["11", "17", "21", "25"],
+  "dependencies": [
+    {
+      "id": "testing",
+      "name": "Testing",
+      "group": "Web",
+      "description": "JUnit 5 test helpers (ResourceExtension, DropwizardAppExtension)",
+      "aliases": ["test"]
+    },
+    {
+      "id": "auth",
+      "name": "Auth",
+      "group": "Web",
+      "description": "HTTP basic auth (Authenticator, Authorizer, @Auth)",
+      "aliases": ["security"]
+    },
+    {
+      "id": "client",
+      "name": "HTTP Client",
+      "group": "Web",
+      "description": "Instrumented Jersey/HTTP client",
+      "aliases": ["httpclient", "jersey-client"]
+    },
+    {
+      "id": "forms",
+      "name": "Forms",
+      "group": "Web",
+      "description": "Multipart form data (file uploads)",
+      "aliases": ["multipart"]
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "group": "Web",
+      "description": "Classpath static assets served under /static",
+      "aliases": ["static"]
+    },
+    {
+      "id": "views-freemarker",
+      "name": "FreeMarker Views",
+      "group": "Web",
+      "description": "HTML views rendered with FreeMarker",
+      "aliases": ["freemarker", "views"]
+    },
+    {
+      "id": "views-mustache",
+      "name": "Mustache Views",
+      "group": "Web",
+      "description": "HTML views rendered with Mustache",
+      "aliases": ["mustache"]
+    },
+    {
+      "id": "http2",
+      "name": "HTTP/2",
+      "group": "Web",
+      "description": "HTTP/2 connector support (h2 / h2c)",
+      "aliases": ["h2c"]
+    },
+    {
+      "id": "hibernate",
+      "name": "Hibernate",
+      "group": "Data",
+      "description": "Hibernate ORM, SessionFactory, @UnitOfWork DAOs",
+      "aliases": ["jpa", "data-jpa", "orm"]
+    },
+    {
+      "id": "jdbi3",
+      "name": "JDBI 3",
+      "group": "Data",
+      "description": "JDBI 3 SQL objects and DBI factory",
+      "aliases": ["jdbc", "jdbi"]
+    },
+    {
+      "id": "migrations",
+      "name": "Migrations",
+      "group": "Data",
+      "description": "Liquibase migrations bundle (db migrate command)",
+      "aliases": ["liquibase", "flyway"]
+    },
+    {
+      "id": "h2",
+      "name": "H2",
+      "group": "Data",
+      "description": "H2 embedded JDBC driver",
+      "aliases": []
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "group": "Data",
+      "description": "PostgreSQL JDBC driver",
+      "aliases": ["postgres"]
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL",
+      "group": "Data",
+      "description": "MySQL JDBC driver",
+      "aliases": ["mariadb"]
+    },
+    {
+      "id": "json-logging",
+      "name": "JSON Logging",
+      "group": "Ops",
+      "description": "JSON log layout for production log shipping",
+      "aliases": ["jsonlog"]
+    },
+    {
+      "id": "metrics-graphite",
+      "name": "Graphite Metrics",
+      "group": "Ops",
+      "description": "Graphite metrics reporter",
+      "aliases": ["graphite"]
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "group": "Ops",
+      "description": "Dockerfile for the shaded application jar",
+      "aliases": []
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dropwizard Initializr</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">D</span>
+      <h1>Dropwizard <span>Initializr</span></h1>
+    </a>
+    <p class="tagline">Generate a production-ready Dropwizard service — the start.spring.io equivalent for Dropwizard.</p>
+  </header>
+
+  <main class="wrap">
+    <form id="form" autocomplete="off">
+      <div class="grid">
+        <section class="panel" aria-labelledby="project-heading">
+          <h2 id="project-heading">Project</h2>
+
+          <div class="field-row">
+            <label class="k">Build</label>
+            <div class="pills" id="build-pills" role="radiogroup" aria-label="Build tool"></div>
+          </div>
+
+          <div class="field-row">
+            <label class="k" for="dwVersion">Dropwizard</label>
+            <div>
+              <select id="dwVersion" name="dwVersion"></select>
+              <p class="hint">5.x needs Java 17+. 3.x and 4.x need Java 11+.</p>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <label class="k" for="javaVersion">Java</label>
+            <select id="javaVersion" name="javaVersion"></select>
+          </div>
+
+          <h2>Metadata</h2>
+          <div class="field-row">
+            <label class="k" for="group">Group</label>
+            <input id="group" name="group" type="text" required/>
+          </div>
+          <div class="field-row">
+            <label class="k" for="artifact">Artifact</label>
+            <input id="artifact" name="artifact" type="text" required/>
+          </div>
+          <div class="field-row">
+            <label class="k" for="name">Name</label>
+            <input id="name" name="name" type="text" required/>
+          </div>
+          <div class="field-row top">
+            <label class="k" for="description">Description</label>
+            <textarea id="description" name="description"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="k" for="packageName">Package</label>
+            <input id="packageName" name="packageName" type="text" required/>
+          </div>
+          <div class="field-row">
+            <span class="k">Options</span>
+            <div class="checks">
+              <label><input type="checkbox" id="docker" name="docker"/> Dockerfile</label>
+              <label><input type="checkbox" id="git" name="git"/> Git init</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="deps-heading">
+          <h2 id="deps-heading">Dependencies</h2>
+          <div class="search">
+            <label class="sr-only" for="dep-search">Search dependencies</label>
+            <input id="dep-search" type="text" placeholder="Search, type a catalog id, or group:artifact:version" autocomplete="off"/>
+            <div id="results" class="results" role="listbox"></div>
+          </div>
+          <div id="chips" class="chips" aria-live="polite"></div>
+          <p class="hint">Unknown names become <code>io.dropwizard:dropwizard-&lt;name&gt;</code>. Full Maven coordinates are accepted as-is. Catalog typos are corrected.</p>
+          <div id="catalog" class="catalog-groups"></div>
+          <pre class="cli" id="cli" aria-label="Equivalent CLI command"></pre>
+        </section>
+      </div>
+    </form>
+  </main>
+
+  <div class="bar">
+    <div class="bar-inner">
+      <button type="button" class="ghost" id="share">Share</button>
+      <button type="button" class="ghost" id="explore">Explore</button>
+      <button type="button" class="primary" id="generate">Generate <span class="kbd">⌘/Ctrl + ↵</span></button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <h2 id="modal-title">Project tree</h2>
+      <div id="tree" class="tree"></div>
+      <p><button type="button" class="ghost" id="close-modal">Close</button></p>
+    </div>
+  </div>
+  <div id="announce" class="sr-only" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

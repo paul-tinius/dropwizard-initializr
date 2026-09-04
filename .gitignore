@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+.vscode/
+*.iml
+__pycache__/
+*.py[cod]
+*.zip
+/demo/
+/target/
+.gradle/
+build/
+*.log
+.python-version
