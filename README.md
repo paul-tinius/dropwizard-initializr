@@ -8,7 +8,7 @@ Generate a runnable Maven or Gradle service from a CLI wizard, flags, or a local
 
 - Bash 3.2+ (macOS `/bin/bash` is fine)
 - JDK 17+ for Dropwizard 5.x (Java 11+ for 3.x / 4.x)
-- Maven 3.6+ and/or Gradle 8+ for the generated project
+- Maven 3.6+ and/or Gradle 9+ for the generated project
 - Python 3.9+ only if you use the web UI
 
 ## Install
